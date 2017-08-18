@@ -7,9 +7,9 @@ app.use(morgan('combined'));
 
 
 var counter = 0;
-app.get('/count', function(req, res){
+app.get('/counter', function(req, res){
     counter=counter+1;
-    red.send(counter.tostring());
+    res.send(counter.tostring());
 });
 
 app.get('/', function (req, res) {
