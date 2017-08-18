@@ -4,10 +4,12 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+
+
 var counter = 0;
 app.get("/counter", function(req, res){
     counter=counter+1;
-    red.send(counter.tostring())
+    red.send(counter.tostring());
 });
 
 app.get('/', function (req, res) {
