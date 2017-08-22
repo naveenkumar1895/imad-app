@@ -28,7 +28,7 @@ var pool = new pool(config);
 app.get('test-db',function(req,res){
     // make a select request
     // respose the resutlt
-    poo.query('SELECT*From Testdb',function(err,result){
+    pool.query('SELECT*From Testdb',function(err,result){
        if(err)
        {
            res.status(500).send(err.tostring());
