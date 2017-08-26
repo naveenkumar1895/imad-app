@@ -1,6 +1,7 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+// var pool = require('pg').pool;
 var crypto= require('crypto');
 
 var config ={
@@ -33,10 +34,10 @@ app.get('/counter', function(req, res){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-var pool = new pool(config);
+/*var pool = new pool(config);
 app.get('test-db',function(req,res){
-    // make a select request
-    // respose the resutlt
+    make a select request
+    respose the resutlt
     pool.query('SELECT*From Testdb',function(err,result){
        if(err)
        {
@@ -46,7 +47,7 @@ app.get('test-db',function(req,res){
        }
     });
 });
-
+*/
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
